@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LuisTh 👤</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body{font-family:'Rajdhani',sans-serif;margin:0;padding:0;background:#1E1E1E;color:#E0E0E0;line-height:1.6;transition:background .5s ease,color .5s ease}
+        body.light{background:#F5F5F5;color:#333}
+        h1,h2,h3{font-family:'Orbitron',sans-serif;color:#E0E0E0;text-shadow:0 0 5px #6A5ACD,0 0 10px #6A5ACD;transition:color .5s ease,text-shadow .5s ease}
+        body.light h1,body.light h2,body.light h3{color:#333;text-shadow:0 0 5px #7B68EE,0 0 10px #7B68EE}
+        a{color:#E0E0E0;text-decoration:none;transition:color .3s ease}
+        body.light a{color:#333}
+        a:hover{color:#7B68EE}
+        .ctn{max-width:1200px;margin:0 auto;padding:20px}
+        p{color:#E0E0E0;transition:color .5s ease}
+        body.light p{color:#555}
+        nav{background:#121212;padding:15px 0;position:sticky;top:0;z-index:1000;box-shadow:0 4px 15px rgba(106,90,205,.3);border-bottom:2px solid #6A5ACD;transition:background .5s ease,box-shadow .5s ease,border-color .5s ease}
+        body.light nav{background:#F5F5F5;box-shadow:0 4px 15px rgba(123,104,238,.3);border-bottom:2px solid #7B68EE}
+        .nav-ctn{display:flex;justify-content:space-between;align-items:center;padding:0 20px}
+        .nav-logo img{height:70px;filter:drop-shadow(0 0 5px #6A5ACD) brightness(1.2);transition:transform .3s ease,filter .3s ease;animation:glow 2s infinite alternate}
+        body.light .nav-logo img{filter:drop-shadow(0 0 5px #7B68EE) brightness(1.2)}
+        .nav-logo img:hover{transform:scale(1.1);filter:drop-shadow(0 0 15px #6A5ACD) brightness(1.5)}
+        body.light .nav-logo img:hover{filter:drop-shadow(0 0 15px #7B68EE) brightness(1.5)}
+        @keyframes glow{0%{filter:drop-shadow(0 0 5px #6A5ACD) brightness(1.2)}100%{filter:drop-shadow(0 0 15px #6A5ACD) brightness(1.5)}}
+        .nav-menu{display:flex;list-style:none;margin:0;padding:0}
+        .nav-menu li{margin:0 20px}
+        .nav-menu li a{font-weight:bold;font-size:1.1em;transition:color .3s ease}
+        .nav-menu li a:hover{color:#7B68EE}
+        .menu-icon{display:none;font-size:1.5em;cursor:pointer;color:#6A5ACD}
+        body.light .menu-icon{color:#7B68EE}
+        @media (max-width:768px){.nav-menu{display:none;flex-direction:column;background:#121212;position:absolute;top:60px;right:20px;width:200px;box-shadow:0 4px 15px rgba(106,90,205,.3);border-radius:10px;padding:10px;animation:slideDown .5s ease}body.light .nav-menu{background:#F5F5F5;box-shadow:0 4px 15px rgba(123,104,238,.3)}@keyframes slideDown{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}.nav-menu.active{display:flex}.nav-menu li{margin:10px 0;text-align:center}.menu-icon{display:block}}
+        #home{background:linear-gradient(135deg,#1E1E1E,#121212);color:#E0E0E0;padding:150px 0;text-align:center;transition:background .5s ease}
+        body.light #home{background:linear-gradient(135deg,#F5F5F5,#E0E0E0)}
+        #home h1{font-size:4em;margin-bottom:10px;animation:fadeIn 2s ease-in-out}
+        #home p{font-size:1.2em;margin-bottom:30px;animation:fadeIn 2.5s ease-in-out}
+        #home .btn{background:#6A5ACD;color:#E0E0E0;padding:12px 25px;border-radius:5px;font-weight:bold;font-size:1.1em;transition:background .3s ease,transform .3s ease;animation:fadeIn 3s ease-in-out;box-shadow:0 0 10px #6A5ACD}
+        body.light #home .btn{background:#7B68EE;box-shadow:0 0 10px #7B68EE}
+        #home .btn:hover{background:#7B68EE;transform:scale(1.05)}
+        body.light #home .btn:hover{background:#6A5ACD}
+        #skills{padding:80px 0;text-align:center}
+        .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+        .skill-card{background:#121212;padding:20px;border-radius:10px;box-shadow:0 4px 15px rgba(106,90,205,.3);transition:transform .3s ease,box-shadow .3s ease;border:1px solid #6A5ACD}
+        body.light .skill-card{background:#FFF;box-shadow:0 4px 15px rgba(123,104,238,.3);border:1px solid #7B68EE}
+        .skill-card:hover{transform:translateY(-10px);box-shadow:0 8px 25px rgba(106,90,205,.5)}
+        body.light .skill-card:hover{box-shadow:0 8px 25px rgba(123,104,238,.5)}
+        .skill-card .icon{font-size:2.5em;color:#6A5ACD;margin-bottom:15px;text-shadow:0 0 5px #6A5ACD}
+        body.light .skill-card .icon{color:#7B68EE;text-shadow:0 0 5px #7B68EE}
+        #services{padding:80px 0;text-align:center}
+        .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+        .project-card{background:#121212;padding:20px;border-radius:10px;box-shadow:0 4px 15px rgba(106,90,205,.3);transition:transform .3s ease,box-shadow .3s ease;border:1px solid #6A5ACD}
+        body.light .project-card{background:#FFF;box-shadow:0 4px 15px rgba(123,104,238,.3);border:1px solid #7B68EE}
+        .project-card img{width:100%;height:200px;object-fit:cover;border-radius:10px;margin-bottom:15px}
+        .project-card:hover{transform:translateY(-10px);box-shadow:0 8px 25px rgba(106,90,205,.5)}
+        body.light .project-card:hover{box-shadow:0 8px 25px rgba(123,104,238,.5)}
+        #donation{padding:80px 0;text-align:center}
+        .donation-box{background:#121212;padding:30px;border-radius:10px;box-shadow:0 4px 15px rgba(106,90,205,.3);border:1px solid #6A5ACD}
+        body.light .donation-box{background:#FFF;box-shadow:0 4px 15px rgba(123,104,238,.3);border:1px solid #7B68EE}
+        .donation-box h3{margin-bottom:20px}
+        .donation-box .btn{background:#6A5ACD;color:#E0E0E0;padding:12px 25px;border-radius:5px;font-weight:bold;font-size:1.1em;transition:background .3s ease,transform .3s ease;box-shadow:0 0 10px #6A5ACD}
+        body.light .donation-box .btn{background:#7B68EE;box-shadow:0 0 10px #7B68EE}
+        .donation-box .btn:hover{background:#7B68EE;transform:scale(1.05)}
+        body.light .donation-box .btn:hover{background:#6A5ACD}
+        footer{background:#121212;color:#E0E0E0;padding:30px 0;border-top:2px solid #6A5ACD;transition:background .5s ease,border-color .5s ease}
+        body.light footer{background:#F5F5F5;border-top:2px solid #7B68EE}
+        .footer-ctn{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 20px}
+        .footer-links ul{list-style:none;padding:0;margin:0}
+        .footer-links ul li{margin-bottom:10px}
+        .footer-links ul li a{color:#E0E0E0;font-weight:bold;font-size:1.1em;transition:color .3s ease}
+        body.light .footer-links ul li a{color:#333}
+        .footer-links ul li a:hover{color:#7B68EE}
+        .footer-social{display:flex;flex-direction:column;align-items:center}
+        .footer-social h4{font-weight:bold;font-size:1.1em;margin-bottom:10px;color:#E0E0E0}
+        body.light .footer-social h4{color:#333}
+        .social-icons{display:flex;gap:15px}
+        .social-icons .btn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .3s ease,transform .3s ease;border:2px solid #6A5ACD;background:transparent}
+        body.light .social-icons .btn{border:2px solid #7B68EE}
+        .social-icons .btn:hover{transform:scale(1.1);background:#6A5ACD}
+        body.light .social-icons .btn:hover{background:#7B68EE}
+        .social-icons .btn svg{color:#E0E0E0;width:20px;height:20px;transition:color .3s ease}
+        body.light .social-icons .btn svg{color:#333}
+        .social-icons .btn:hover svg{color:#fff}
+        .footer-center{text-align:center;margin:20px 0}
+        .footer-center p{font-size:1.1em;margin:0}
+        .footer-center a{color:#6A5ACD;font-weight:bold;transition:color .3s ease}
+        body.light .footer-center a{color:#7B68EE}
+        .footer-center a:hover{color:#7B68EE}
+        body.light .footer-center a:hover{color:#6A5ACD}
+        .subfooter{background:#1E1E1E;padding:15px 0;text-align:center;border-top:1px solid #6A5ACD;transition:background .5s ease,border-color .5s ease}
+        body.light .subfooter{background:#E0E0E0;border-top:1px solid #7B68EE}
+        .subfooter p{margin:0;font-size:.9em}
+        .luist{text-decoration:none;color:#6A5ACD}
+        body.light .luist{color:#7B68EE}
+        .luist:hover{color:#7B68EE}
+        body.light .luist:hover{color:#6A5ACD}
+        .mode-toggle{position:fixed;bottom:20px;right:20px;background:#6A5ACD;color:#E0E0E0;padding:10px 15px;border-radius:5px;font-weight:bold;cursor:pointer;transition:background .3s ease,transform .3s ease;box-shadow:0 0 10px #6A5ACD}
+        body.light .mode-toggle{background:#7B68EE;box-shadow:0 0 10px #7B68EE}
+        .mode-toggle:hover{transform:scale(1.05)}
+        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-ctn">
+            <div class="nav-logo">
+                <a href="index.html"><img src="luisth.png" alt="LuisTh Logo"></a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#donation">Donación</a></li>
+            </ul>
+            <div class="menu-icon" id="menuIcon">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    <section id="home">
+        <div class="ctn">
+            <h1>Hola, soy LuisTh</h1>
+            <p>Especializado en diseño y gestión de redes, tecnología y seguridad. Ofrezco soluciones técnicas personalizadas para conectar, proteger y optimizar tu mundo digital.</p>
+            <a href="#services" class="btn">Conoce mis servicios</a>
+        </div>
+    </section>
+    <section id="skills">
+        <div class="ctn">
+            <h2>Mis Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-network-wired icon"></i>
+                    <h3>Arquitectura y Gestión de Redes</h3>
+                    <p>Diseño, implementación y administración de infraestructuras de red robustas y escalables, asegurando conectividad, rendimiento y seguridad en entornos empresariales.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-shield-alt icon"></i>
+                    <h3>Seguridad de Redes y Protección de Datos</h3>
+                    <p>Implementación de firewalls, VPNs y sistemas de detección de intrusiones para proteger infraestructuras y garantizar la integridad de los datos.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-wifi icon"></i>
+                    <h3>Redes Inalámbricas y Conectividad Avanzada</h3>
+                    <p>Diseño, implementación y optimización de redes Wi-Fi de alto rendimiento, garantizando cobertura, estabilidad y seguridad en entornos empresariales y residenciales.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-server icon"></i>
+                    <h3>Administración de Servidores y Sistemas</h3>
+                    <p>Gestión, configuración y mantenimiento de servidores locales y en la nube, asegurando alta disponibilidad, rendimiento y seguridad para operaciones críticas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <div class="ctn">
+            <h2>Mis Servicios</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="net.jpg" alt="Diseño de Red LAN">
+                    <h3>Diseño, Implementación y Soporte Técnico Especializado</h3>
+                    <p>Servicios profesionales en redes y comunicaciones. Ofrezco soluciones personalizadas para conectar tu negocio con eficiencia y seguridad.</p>
+                </div>
+                <div class="project-card">
+                    <img src="repair.jpg" alt="Configuración de VPN">
+                    <h3>Soporte Técnico Especializado para Laptops y Computadoras</h3>
+                    <p>Reparación, mantenimiento y optimización de equipos. ¡Soluciones rápidas y confiables para mantener tu tecnología al 100%</p>
+                </div>
+                <div class="project-card">
+                    <img src="gadgets.png" alt="Optimización de Red Wi-Fi">
+                    <h3>Tecnología y Seguridad de Alto Desempeño</h3>
+                    <p>Productos y soluciones especializadas en redes, almacenamiento y accesorios tecnológicos. Calidad y confianza para tus necesidades.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="donation">
+        <div class="ctn">
+            <h2>Donación</h2>
+            <div class="donation-box">
+                <h3>Esto es una página de prueba</h3>
+                <p>Esta es una página de prueba!!!</p>
+                <a href="https://www.paypal.me/Luisth05" target="_blank" class="btn">Donar Ahora</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-ctn">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#donation">Donación</a></li>
+                </ul>
+            </div>
+            <div class="footer-center">
+                <p>Página en proceso...</p>
+                <a href="index.html">Luis-Th</a>
+            </div>
+            <div class="footer-social">
+                <h4>Redes Sociales</h4>
+                <div class="social-icons">
+                    <a href="https://linkedin.com/" target="_blank" class="btn linkedin"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/luisth01" target="_blank" class="btn github"><i class="fab fa-github"></i></a>
+                    <a href="https://x.com/LuisTH054" target="_blank" class="btn twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/@Luis-Th" target="_blank" class="btn youtube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="subfooter">
+        <p>&copy; 2025 <a href="index.html" class="luist">LuisTh</a>. Todos los derechos reservados.</p>
+    </div>
+    <div class="mode-toggle" id="modeToggle">
+        <i class="fas fa-moon"></i> Modo Oscuro
+    </div>
+    <script>
+        const menuIcon = document.getElementById('menuIcon'),
+              navMenu = document.getElementById('navMenu');
+        menuIcon.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        const modeToggle = document.getElementById('modeToggle'),
+              body = document.body;
+        modeToggle.addEventListener('click', () => {
+            body.classList.toggle('light');
+            body.classList.contains('light') ? modeToggle.innerHTML = '<i class="fas fa-sun"></i> Modo Claro' : modeToggle.innerHTML = '<i class="fas fa-moon"></i> Modo Oscuro';
+        });
+
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
